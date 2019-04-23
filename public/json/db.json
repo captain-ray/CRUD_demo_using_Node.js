@@ -1,0 +1,88 @@
+{
+    "students": [
+        {
+            "id": 4,
+            "name": "Lucas",
+            "gender": 0,
+            "age": 18,
+            "hobbies": "sleep and eat"
+        },
+        {
+            "id": 5,
+            "name": "Lucas",
+            "gender": 0,
+            "age": 18,
+            "hobbies": "sleep and eat"
+        },
+        {
+            "id": 6,
+            "name": "Lucas",
+            "gender": 0,
+            "age": 18,
+            "hobbies": "sleep and eat"
+        },
+        {
+            "id": 7,
+            "name": "Lucas",
+            "gender": 0,
+            "age": 18,
+            "hobbies": "sleep and eat"
+        },
+        {
+            "name": "Lucas",
+            "gender": 0,
+            "age": 14,
+            "hobbies": "eat sleep",
+            "id": 9
+        },
+        {
+            "name": "Lucas",
+            "gender": 0,
+            "age": 14,
+            "hobbies": "eat sleep",
+            "id": 10
+        },
+        {
+            "name": "lad",
+            "gender": 0,
+            "age": 14,
+            "hobbies": "eat sleep",
+            "id": 10
+        },
+        {
+            "name": "Ray",
+            "gender": 0,
+            "age": 14,
+            "hobbies": "eat sleep",
+            "id": 10
+        },
+        {
+            "name": "Lucas",
+            "gender": "0",
+            "age": "14",
+            "hobbies": "eat sleep",
+            "id": 11
+        },
+        {
+            "name": "Lucas",
+            "gender": "0",
+            "age": "14",
+            "hobbies": "eat sleep",
+            "id": 12
+        },
+        {
+            "name": "Lucas",
+            "gender": "0",
+            "age": "14",
+            "hobbies": "eat sleep",
+            "id": 13
+        },
+        {
+            "name": "Lucas",
+            "gender": "0",
+            "age": "14",
+            "hobbies": "eat sleep",
+            "id": 14
+        }
+    ]
+}

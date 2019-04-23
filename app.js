@@ -7,8 +7,21 @@
  */
 const express = require('express')
 const app=express()
+const router=require('./router')
+
 const port=3001
 
-app.get('/',(req,res)=>res.send('Hello Node.js!'))
+//javascript template engine ---'art-template'
+app.engine('html',require('express-art-template'))
+
+
+
+
 
 app.listen(port,()=>console.log(`App listening on port ${port}!`))
+
+//the only built-in middleware function in Express. it servers static files
+app.use('/public',express.static('./public'))
+app.use('/node_modules',express.static('./node_modules'))
+
+app.use(router)
