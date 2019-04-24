@@ -8,13 +8,18 @@
 const express = require('express')
 const app=express()
 const router=require('./router')
+const bodyParser=require('body-parser')
+
 
 const port=3001
 
 //javascript template engine ---'art-template'
 app.engine('html',require('express-art-template'))
 
-
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended:false}))
+// parse application/json
+app.use(bodyParser.json())
 
 
 

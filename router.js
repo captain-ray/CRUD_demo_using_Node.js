@@ -15,14 +15,31 @@ let router=express.Router()
 
 
 router.get('/students',(req,res)=>{
-    res.render('index.html',{
-        labels:[
-            'Jack',
-            'Lucas',
-            'Isabela'
-        ]
+    
+    Student.find((err,students)=>{
+        res.render('index.html',{
+            labels:[
+                'Jack',
+                'Lucas',
+                'Isabela'
+            ],
+            students:students
+        })
+
     })
 })
+
+//get to new.html
+router.get('/students/new',(req,res)=>res.render('new.html'))
+
+//post request of adding new student
+router.post('/students/new',(req,res)=>{
+    new Student(req.body).save((err)=>{
+        if(err)console.log(err)
+        res.redirect('/students')
+    })
+})
+
 
 
 module.exports=router

@@ -2,12 +2,15 @@
 
 Implement CRUD functions for "<u>**Student**</u>" (name,gender,age,hobbies).
 
+
+
 ### Tools to use (NPM packages):
 
 - **Express** (a minimal and flexible Node.js web application framework)
 - **nodemon** (simple monitor script for use during development of a node.js app.)
 - **art-template** (a javascript templating engine)
 - **mongoose** (a [MongoDB](https://www.mongodb.org/) object modeling tool designed to work in an asynchronous environment.)
+- **body-parser** (Parse incoming request bodies in a middleware before your handlers, available under the `req.body` property.)
 
 
 
@@ -86,6 +89,7 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
 
    ```js
    let mongoose=require('mongoose')
+   mongoose.connect('mongodb://localhost:27017/student')
    let Schema=mongoose.Schema;
    
    let studentSchema=new Schema({
@@ -123,8 +127,43 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
            },
    ```
 
-    
+5. #### 'C'---Create a student
+
+   ```js
+   //post request of adding new student
+   router.post('/students/new',(req,res)=>{
+     
+       new Student(req.body).save((err)=>{
+           //using body-parser, req.body is an object containing values
+           if(err)console.log(err)
+           res.redirect('/students')
+       })
+   })
+   ```
+
+   demo:
+   ![2](demo_images/2.png)
+
+6. #### 'R'---Read students from MongoDB
+
+   ```js
+   Student.find((err,students)=>{
+           res.render('index.html',{
+               labels:[
+                   ...
+               ],
+               students:students
+           })
+   
+       })
+   ```
+
+   demo:
+
+   ![3](demo_images/3.png)
+
+
+
+7. #### 'U'---Update student
 
    
-
-#### 

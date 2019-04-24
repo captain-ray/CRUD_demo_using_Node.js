@@ -1,4 +1,5 @@
 let mongoose=require('mongoose')
+mongoose.connect('mongodb://localhost:27017/student')
 let Schema=mongoose.Schema;
 
 let studentSchema=new Schema({

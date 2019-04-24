@@ -19,6 +19,7 @@
   "homepage": "https://github.com/captain-ray/CRUD_demo_using_Node.js#readme",
   "dependencies": {
     "art-template": "^4.13.2",
+    "body-parser": "^1.18.3",
     "bootstrap": "^3.4.1",
     "express": "^4.16.4",
     "express-art-template": "^1.0.1",
