@@ -13,7 +13,7 @@ Implement CRUD functions for "<u>**Student**</u>" (name,gender,age,hobbies).
 
 ### Steps
 
-1. ##### Start a server and listens on port <u>**3001**</u> for connections
+1. #### Start a server and listens on port <u>**3001**</u> for connections
 
 ```js
 const express = require('express')
@@ -26,7 +26,7 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
 
 ```
 
-2. ##### Importing resources downloaded from internet (html,css,js,img)
+2. #### Importing resources downloaded from internet (html,css,js,img)
 
 - <u>public</u>
 
@@ -42,7 +42,7 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
 
   
 
-3. ##### Create 'Router' — using express.Router 
+3. #### Create 'Router' — using express.Router 
 
    ```js
    const express=require('express')
@@ -80,6 +80,51 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
 
    
 
+4. #### Create Schema for "Student" — using 'mongoose'
+
+   Student (name,gender,age,hobbies)
+
+   ```js
+   let mongoose=require('mongoose')
+   let Schema=mongoose.Schema;
    
+   let studentSchema=new Schema({
+       name:{
+           type:String,
+           required:true
+       },
+       gender:{
+           type:Number,
+           default:0,
+           enum:[0,1]
+       },
+       age:{
+           type:Number
+       },
+       hobbies:{
+           type:String
+       }
+   })
+   
+   module.exports=mongoose.model('Student',studentSchema)
+   ```
 
    
+
+   *<u>Node.js debugging in VS code</u>*
+
+   ```json
+   //Add this to launch.json
+   {
+               "type": "node",
+               "request": "attach",
+               "name": "Attach by Process ID",
+               "processId": "${command:PickProcess}"
+           },
+   ```
+
+    
+
+   
+
+#### 

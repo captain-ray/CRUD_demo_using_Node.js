@@ -8,6 +8,9 @@
 
 
 const express=require('express')
+const Student=require('./student')
+
+
 let router=express.Router()
 
 
