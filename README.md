@@ -9,7 +9,7 @@ Implement CRUD functions for "<u>**Student**</u>" (name,gender,age,hobbies).
 - **Express** (a minimal and flexible Node.js web application framework)
 - **nodemon** (simple monitor script for use during development of a node.js app.)
 - **art-template** (a javascript templating engine)
-- **mongoose** (a [MongoDB](https://www.mongodb.org/) object modeling tool designed to work in an asynchronous environment.)
+- **mongoose** (a MongoDB object modeling tool designed to work in an asynchronous environment.)
 - **body-parser** (Parse incoming request bodies in a middleware before your handlers, available under the `req.body` property.)
 
 
@@ -218,4 +218,3 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
    ```
 
    
-
