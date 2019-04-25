@@ -164,7 +164,7 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
 
 
 
-7. #### 'U'---Update student
+7. #### 'U'---Update a student
 
    **get student info by ID, and render it in edit.html**
 
@@ -197,4 +197,25 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
    ![5](demo_images/5.png)
 
 ![6](demo_images/6.png)
+
+
+
+8. #### 'D'---Delete a student
+
+   **delete student by studentID**
+
+   ```js
+   router.get('/students/delete',(req,res)=>{
+       Student.deleteOne({
+           // mongodb has an _id index by default that
+           _id:req.query.id
+       },(err)=>{
+           if(err) console.log(err)
+       })
+     
+       res.redirect('/students')
+   })
+   ```
+
+   
 

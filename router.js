@@ -13,7 +13,7 @@ const Student=require('./student')
 
 let router=express.Router()
 
-// index.html--- show info of all students
+//'R', index.html--- show info of all students
 router.get('/students',(req,res)=>{
 
     Student.find((err,students)=>{
@@ -30,10 +30,10 @@ router.get('/students',(req,res)=>{
 })
 
 
-//get to new.html
+//'C', get to new.html
 router.get('/students/new',(req,res)=>res.render('new.html'))
 
-//post request of adding new student
+//'C', post request of adding new student
 router.post('/students/new',(req,res)=>{
     new Student(req.body).save((err)=>{
         //using body-parser, req.body is an object containing values
@@ -43,7 +43,7 @@ router.post('/students/new',(req,res)=>{
 })
 
 
-//get student info by ID, and render it in edit.html
+//'U', get student info by ID, and render it in edit.html
 router.get('/students/edit',(req,res)=>{
     Student.findById(req.query.id,(err,editStudent)=>{
         if(err) console.log(err)
@@ -53,14 +53,25 @@ router.get('/students/edit',(req,res)=>{
     })
 })
 
-//post request and update info of student
+//'U', post request and update info of student
 router.post('/students/edit',(req,res)=>{
     Student.findByIdAndUpdate(req.body.id,req.body,(err,ret)=>{
         if(err) console.log(err)
-        res.redirect('/students/')
+        res.redirect('/students')
     })
 })
 
 
+//'D', delete student by studentID
+router.get('/students/delete',(req,res)=>{
+    Student.deleteOne({
+        // mongodb has an _id index by default that
+        _id:req.query.id
+    },(err)=>{
+        if(err) console.log(err)
+    })
+
+    res.redirect('/students')
+})
 
 module.exports=router
