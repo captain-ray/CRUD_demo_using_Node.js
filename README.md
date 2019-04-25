@@ -166,4 +166,35 @@ app.listen(port,()=>console.log(`App listening on port ${port}!`))
 
 7. #### 'U'---Update student
 
+   **get student info by ID, and render it in edit.html**
+
+   ```js
+   router.get('/students/edit',(req,res)=>{
+       Student.findById(req.query.id,(err,editStudent)=>{
+           if(err) console.log(err)
+           res.render('edit.html',{
+               editStudent:editStudent
+           })
+       })
+   })
+   ```
+
+   ![4](demo_images/4.png)
+
    
+
+   **post request and update info of student**
+
+   ```js
+   router.post('/students/edit',(req,res)=>{
+       Student.findByIdAndUpdate(req.body.id,req.body,(err,ret)=>{
+           if(err) console.log(err)
+           res.redirect('/students/')
+       })
+   })
+   ```
+
+   ![5](demo_images/5.png)
+
+![6](demo_images/6.png)
+
